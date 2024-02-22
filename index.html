@@ -1,48 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Accessible Website</title>
+  <meta charset="utf-8">
+  <title>Cours 1</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Accessible Website</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc at aliquam tincidunt, nisl nunc aliquet nunc, nec tincidunt nunc nunc nec nisi.</p>
-        </section>
-
-        <section>
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2022 My Accessible Website. All rights reserved.</p>
-    </footer>
+      <header class="flex w-full justify-between p-5 items-center border-solid border-2 border-black">
+        <div class="flex gap-5 items-center">
+          <div>
+            <img src="https://cdn.pixabay.com/photo/2016/12/13/22/39/motorcycle-1905281_1280.jpg" alt="logo" class="w-20 h-20 rounded">
+          </div>
+          <div class="links">
+            <a href="article.html">Mon blog</a>
+          </div>
+        </div>
+        <div class="right-header">
+          <div class="links">
+            <a href="login.html.html">Login</a>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div>
+          <div>
+            <div>
+  
+            </div>
+            <div>
+  
+            </div>
+          </div>
+          <div>
+            <p class="text-center">Bienvenue sur mon blog. Vous trouverez ici des articles sur des sujets variés.</p>
+          </div>
+        </div>
+      </main>
 </body>
 </html>
