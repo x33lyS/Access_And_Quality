@@ -14,34 +14,102 @@
 <body class="bg-gray-200 h-screen flex flex-col justify-between">
     <header class="flex w-full justify-between p-5 items-center border-solid border-2 border-black">
         <div class="flex gap-5 items-center">
-            <div>
-                <img src="https://cdn.pixabay.com/photo/2016/12/13/22/39/motorcycle-1905281_1280.jpg" alt="logo"
-                    class="w-20 h-20 rounded">
-            </div>
+          <div>
+            <img src="https://cdn.pixabay.com/photo/2016/12/13/22/39/motorcycle-1905281_1280.jpg" alt="logo"
+              class="w-20 h-20 rounded">
+          </div>
+          <div class="links">
+            <a href="index.html">Accueil</a>
+            <a href="article.html">Article</a>
+          </div>
         </div>
-    </header>
+      <div class="flex items-center">
+        <input type="text" placeholder="Rechercher..." class="border p-2 rounded">
+        <button class="ml-2 bg-blue-600 text-white p-2 rounded">Rechercher</button>
+    </div>
+      </header>
+    <h1 class="text-1xl font-semibold mb-4">Accueil > Connexion</h1>
     <main class="flex-grow flex justify-center items-center">
         <div class="w-1/2 p-8 bg-white rounded shadow-md">
             <h1 class="text-2xl font-semibold mb-4">Connexion</h1>
-            <form action="index.html" method="get">
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-600 text-sm font-medium">Email</label>
+            <form action="index.html" method="post" onsubmit="return handleLogin()">
+                <fieldset>
+                    <legend class="sr-only">Informations de connexion</legend>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-600 text-sm font-medium">Email</label>
                     <input type="email" id="email" name="email" class="w-full p-2 border rounded" required autofocus autocomplete="username">
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-gray-600 text-sm font-medium">Mot de passe</label>
-                    <input type="password" id="password" name="password" class="w-full p-2 border rounded" required autocomplete="current-password">
-                </div>
+                        <div id="username-help" class="text-sm text-gray-500">Veuillez saisir votre email en
+                            respectant la casse(maximum 200 caractères) .</div>
+                    </div>
+                    <div class="mb-6 relative">
+                        <label for="password" class="block text-gray-600 text-sm font-medium">Mot de passe(6 caractères
+                            minimum) <span class="text-red-500">*</span></label>
+                        <input type="password" id="password" name="password"
+                            class="mt-1 p-2 block w-full rounded-md bg-gray-100 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500"
+                            required autocomplete="current-password" minlength="6" aria-describedby="password-help">
+                        <button type="button" id="toggle-password" class="absolute right-2 top-8">Afficher le mot de
+                            passe</button>
+                        <div id="password-help" class="text-sm text-gray-500">Veuillez saisir votre mot de passe.</div>
+                    </div>
+                </fieldset>
                 <button type="submit"
                     class="block w-full bg-blue-600 text-white p-2 rounded text-center hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
                     Se connecter
-            </button>
+                </button>
             </form>
+            <p>Une confirmation par mail vous sera envoyé avant de valider l'accès à votre compte (Authentification à
+                double facteur)</p>
         </div>
     </main>
-    <footer class="text-center p-4 bg-gray-300">
-        <p>Texte de footer</p>
+    <footer class="flex flex-col lg:flex-row w-full justify-between p-5 items-center border-solid border-2 border-black" style="text-align:center;">
+        <div class="links flex justify-between lg:justify-start lg:space-x-10 lg:mr-auto" style="width: 100%; justify-content: center;">
+            <nav class="mb-4 lg:mb-0 flex flex-col">
+                <a href="mentions-legales.html">Mentions Légales</a>
+                <a href="politiqueconfid.html">Politique de confidentialité</a>
+                <a href="conditionsusage.html">Conditions générales d'utilisation</a>
+                <a href="yourdonnee.html">Données personnelles</a>
+            </nav>
+            <nav class="mb-4 lg:mb-0 flex flex-col">
+                <a href="moderation.html">Conditions de modération</a>
+                <a href="aide.html">Besoin d'aide</a>
+                <a href="login.html">Fermer mon compte</a>
+                <a href="propos.html">A propos</a>
+            </nav>
+            <nav class="mb-4 lg:mb-0 flex flex-col">
+                <a href="glossaire.html">Glossaire</a>
+                <a href="plandusite.html">Plan du site</a>
+                <a href="contact.html">Contacts</a>
+                <a href="https://twitter.com/VotreCompteTwitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://facebook/lol" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </nav>
+        </div>
     </footer>
+    <script>
+        document.getElementById('toggle-password').addEventListener('click', function () {
+            var passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.textContent = 'Masquer le mot de passe';
+            } else {
+                passwordInput.type = 'password';
+                this.textContent = 'Afficher le mot de passe';
+            }
+        });
+    
+        function handleLogin() {
+            // You may add your login logic here
+            const isLoginSuccessful = true;  // Replace this with your actual logic
+    
+            if (isLoginSuccessful) {
+                alert("Connexion réussie !");
+                return true;  // Allow the form submission to proceed
+            } else {
+                // If login is not successful, prevent form submission
+                alert("Échec de la connexion. Veuillez vérifier vos informations.");
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>
